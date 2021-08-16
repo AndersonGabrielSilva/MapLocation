@@ -9,4 +9,8 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.1.5" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\MapLocation\Shared\MapLocation.Shared.csproj" />
+  </ItemGroup>
+
 </Project>
