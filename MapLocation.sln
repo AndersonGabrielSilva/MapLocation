@@ -13,6 +13,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{04
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MapLocation", "MapLocation", "{CAB57CE8-17EA-4681-916A-33EA691E15D4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiServiceHub", "ApiServiceHub\ApiServiceHub.csproj", "{3A92CE9B-9832-4D66-B660-2AC54C50A642}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,10 @@ Global
 		{82C3F35F-4483-4743-9584-8CB141BA2AE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{82C3F35F-4483-4743-9584-8CB141BA2AE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{82C3F35F-4483-4743-9584-8CB141BA2AE8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A92CE9B-9832-4D66-B660-2AC54C50A642}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A92CE9B-9832-4D66-B660-2AC54C50A642}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A92CE9B-9832-4D66-B660-2AC54C50A642}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A92CE9B-9832-4D66-B660-2AC54C50A642}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -39,6 +45,7 @@ Global
 		{43E5483E-0295-4323-8815-011400C3B3C1} = {CAB57CE8-17EA-4681-916A-33EA691E15D4}
 		{CE6BDD53-6800-4F65-BDD7-AD0AA581A4A3} = {CAB57CE8-17EA-4681-916A-33EA691E15D4}
 		{82C3F35F-4483-4743-9584-8CB141BA2AE8} = {CAB57CE8-17EA-4681-916A-33EA691E15D4}
+		{3A92CE9B-9832-4D66-B660-2AC54C50A642} = {044E3A7A-AB10-4958-A967-AC63E740EE5F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {595A97A0-D4F9-474A-B248-8E9FF10B0502}
