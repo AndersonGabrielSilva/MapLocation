@@ -3,19 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31424.327
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MapLocation.Server", "MapLocation\Server\MapLocation.Server.csproj", "{43E5483E-0295-4323-8815-011400C3B3C1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MapLocation.Server", "MapLocation\Server\MapLocation.Server.csproj", "{43E5483E-0295-4323-8815-011400C3B3C1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MapLocation.Client", "MapLocation\Client\MapLocation.Client.csproj", "{CE6BDD53-6800-4F65-BDD7-AD0AA581A4A3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MapLocation.Client", "MapLocation\Client\MapLocation.Client.csproj", "{CE6BDD53-6800-4F65-BDD7-AD0AA581A4A3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MapLocation.Shared", "MapLocation\Shared\MapLocation.Shared.csproj", "{82C3F35F-4483-4743-9584-8CB141BA2AE8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MapLocation.Shared", "MapLocation\Shared\MapLocation.Shared.csproj", "{82C3F35F-4483-4743-9584-8CB141BA2AE8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{044E3A7A-AB10-4958-A967-AC63E740EE5F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MapLocation", "MapLocation", "{CAB57CE8-17EA-4681-916A-33EA691E15D4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiServiceHub", "ApiServiceHub\ApiServiceHub.csproj", "{3A92CE9B-9832-4D66-B660-2AC54C50A642}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiServiceHub", "ApiServiceHub\ApiServiceHub.csproj", "{3A92CE9B-9832-4D66-B660-2AC54C50A642}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{BB8814DE-CFCE-411E-A13C-876542BB5801}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Repositories", "Repositories", "{3A5698C8-DF52-4D45-9EC8-1CBC763AF041}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
