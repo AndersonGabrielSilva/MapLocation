@@ -8,6 +8,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Identity.Web;
+using MudBlazor.Services;
 using System.Linq;
 
 namespace MapLocation.Server
@@ -30,6 +31,7 @@ namespace MapLocation.Server
 
             services.AddControllersWithViews();
             services.AddRazorPages();
+            services.AddMudServices();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
