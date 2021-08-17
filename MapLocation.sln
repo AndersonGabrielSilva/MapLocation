@@ -11,9 +11,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{BB8814
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MapLocationShared", "MapLocationShared\MapLocationShared.csproj", "{C2751740-2D01-459E-BB18-671C19E5B057}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MapLocation.Server", "MapLocation\Server\MapLocation.Server.csproj", "{919E2834-BBA9-49E0-90F0-19521FE24C2C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MapLocation.Server", "MapLocation\Server\MapLocation.Server.csproj", "{919E2834-BBA9-49E0-90F0-19521FE24C2C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MapLocation.Client", "MapLocation\Client\MapLocation.Client.csproj", "{235BB808-784B-4036-B018-6B3B6371CC2F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MapLocation.Client", "MapLocation\Client\MapLocation.Client.csproj", "{235BB808-784B-4036-B018-6B3B6371CC2F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MapLocation", "MapLocation", "{D0CF6208-4CC8-46AB-A6BE-7C02269FDA9D}"
 EndProject
