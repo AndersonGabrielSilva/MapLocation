@@ -3,13 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31424.327
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MapLocation.Server", "MapLocation\Server\MapLocation.Server.csproj", "{43E5483E-0295-4323-8815-011400C3B3C1}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MapLocation.Client", "MapLocation\Client\MapLocation.Client.csproj", "{CE6BDD53-6800-4F65-BDD7-AD0AA581A4A3}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{044E3A7A-AB10-4958-A967-AC63E740EE5F}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MapLocation", "MapLocation", "{CAB57CE8-17EA-4681-916A-33EA691E15D4}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiServiceHub", "ApiServiceHub\ApiServiceHub.csproj", "{3A92CE9B-9832-4D66-B660-2AC54C50A642}"
 EndProject
@@ -17,15 +11,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{BB8814
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Repositories", "Repositories", "{3A5698C8-DF52-4D45-9EC8-1CBC763AF041}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{9B58A3B5-1479-443D-BECA-002B9867793A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EFRepositories", "EFRepositories\EFRepositories.csproj", "{7F34C00F-1A8F-46B0-B4FB-1C8A9ECF236A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFRepositories", "EFRepositories\EFRepositories.csproj", "{7F34C00F-1A8F-46B0-B4FB-1C8A9ECF236A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SystemSettings", "SistemaSettings\SystemSettings.csproj", "{249A2401-862E-4523-A6FF-885A45AB3CD8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFDataConfiguration", "EFDataConfiguration\EFDataConfiguration.csproj", "{8F943BF9-AA7F-4602-95DD-3B48DB66FBFF}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SystemSettings", "SistemaSettings\SystemSettings.csproj", "{249A2401-862E-4523-A6FF-885A45AB3CD8}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MapLocationShared", "MapLocationShared\MapLocationShared.csproj", "{C2751740-2D01-459E-BB18-671C19E5B057}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MapLocationShared", "MapLocationShared\MapLocationShared.csproj", "{C2751740-2D01-459E-BB18-671C19E5B057}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,14 +23,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{43E5483E-0295-4323-8815-011400C3B3C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{43E5483E-0295-4323-8815-011400C3B3C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{43E5483E-0295-4323-8815-011400C3B3C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{43E5483E-0295-4323-8815-011400C3B3C1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CE6BDD53-6800-4F65-BDD7-AD0AA581A4A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CE6BDD53-6800-4F65-BDD7-AD0AA581A4A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CE6BDD53-6800-4F65-BDD7-AD0AA581A4A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CE6BDD53-6800-4F65-BDD7-AD0AA581A4A3}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3A92CE9B-9832-4D66-B660-2AC54C50A642}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3A92CE9B-9832-4D66-B660-2AC54C50A642}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3A92CE9B-9832-4D66-B660-2AC54C50A642}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -49,10 +31,6 @@ Global
 		{7F34C00F-1A8F-46B0-B4FB-1C8A9ECF236A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7F34C00F-1A8F-46B0-B4FB-1C8A9ECF236A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7F34C00F-1A8F-46B0-B4FB-1C8A9ECF236A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8F943BF9-AA7F-4602-95DD-3B48DB66FBFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8F943BF9-AA7F-4602-95DD-3B48DB66FBFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8F943BF9-AA7F-4602-95DD-3B48DB66FBFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8F943BF9-AA7F-4602-95DD-3B48DB66FBFF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{249A2401-862E-4523-A6FF-885A45AB3CD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{249A2401-862E-4523-A6FF-885A45AB3CD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{249A2401-862E-4523-A6FF-885A45AB3CD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -66,11 +44,8 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{43E5483E-0295-4323-8815-011400C3B3C1} = {CAB57CE8-17EA-4681-916A-33EA691E15D4}
-		{CE6BDD53-6800-4F65-BDD7-AD0AA581A4A3} = {CAB57CE8-17EA-4681-916A-33EA691E15D4}
 		{3A92CE9B-9832-4D66-B660-2AC54C50A642} = {044E3A7A-AB10-4958-A967-AC63E740EE5F}
 		{7F34C00F-1A8F-46B0-B4FB-1C8A9ECF236A} = {3A5698C8-DF52-4D45-9EC8-1CBC763AF041}
-		{8F943BF9-AA7F-4602-95DD-3B48DB66FBFF} = {9B58A3B5-1479-443D-BECA-002B9867793A}
 		{249A2401-862E-4523-A6FF-885A45AB3CD8} = {BB8814DE-CFCE-411E-A13C-876542BB5801}
 		{C2751740-2D01-459E-BB18-671C19E5B057} = {BB8814DE-CFCE-411E-A13C-876542BB5801}
 	EndGlobalSection
