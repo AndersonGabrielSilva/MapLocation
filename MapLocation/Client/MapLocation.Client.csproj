@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Shared\MapLocation.Shared.csproj" />
+    <ProjectReference Include="..\..\MapLocationShared\MapLocationShared.csproj" />
   </ItemGroup>
 
   <ItemGroup>

@@ -13,7 +13,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Client\MapLocation.Client.csproj" />
-    <ProjectReference Include="..\Shared\MapLocation.Shared.csproj" />
   </ItemGroup>
 
   <ItemGroup>
