@@ -10,10 +10,14 @@
 
     <base href="/" />
 
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+          integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+          crossorigin="" />
+
     <link href="css/app.css" rel="stylesheet" />
 
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
-    
+
     <link href="_content/MudBlazor/MudBlazor.min.css" rel="stylesheet" />
 
     <link href="MapLocation.Client.styles.css" rel="stylesheet" />
@@ -53,6 +57,8 @@
     <script src="_content/Microsoft.AspNetCore.Components.WebAssembly.Authentication/AuthenticationService.js"></script>
 
     <script src="_framework/blazor.webassembly.js"></script>
+
+    <script src="_content/BrowserInterop/scripts.js"></script>
 
     <script>navigator.serviceWorker.register('service-worker.js');</script>
 </body>

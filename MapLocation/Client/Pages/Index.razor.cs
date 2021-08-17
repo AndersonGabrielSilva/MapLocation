@@ -50,7 +50,6 @@ namespace MapLocation.Client.Pages
                     var msgErro = erro.Message;
                 }
             }
-
         }
 
         private async Task TesteHub(string mensagem)
