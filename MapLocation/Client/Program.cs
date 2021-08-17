@@ -24,15 +24,15 @@ namespace MapLocation.Client
             builder.Services.AddScoped(sp => sp.GetRequiredService<IHttpClientFactory>().CreateClient("MapLocation.ServerAPI"));
 
             builder.Services.AddApiAuthorization();
-            builder.Services.AddScoped<ParametrosClient>();
+            //builder.Services.AddScoped<ParametrosClient>();
 
-            builder.Services.AddScoped<TokenAuthStateProvider>();
+            //builder.Services.AddScoped<TokenAuthStateProvider>();
 
-            builder.Services.AddScoped<IAuthorizeService, TokenAuthStateProvider>(
-                provider => provider.GetRequiredService<TokenAuthStateProvider>());
+            //builder.Services.AddScoped<IAuthorizeService, TokenAuthStateProvider>(
+            //    provider => provider.GetRequiredService<TokenAuthStateProvider>());
 
-            builder.Services.AddScoped<AuthenticationStateProvider, TokenAuthStateProvider>(
-                provider => provider.GetRequiredService<TokenAuthStateProvider>());
+            //builder.Services.AddScoped<AuthenticationStateProvider, TokenAuthStateProvider>(
+            //    provider => provider.GetRequiredService<TokenAuthStateProvider>());
 
             await builder.Build().RunAsync();
         }
