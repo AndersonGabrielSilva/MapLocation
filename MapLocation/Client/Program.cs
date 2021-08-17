@@ -1,12 +1,8 @@
-using MapLocation.Client.Auth;
-using MapLocation.Shared.Sistema;
-using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Components.WebAssembly.Authentication;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using MudBlazor.Services;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
@@ -25,28 +21,10 @@ namespace MapLocation.Client
             builder.Services.AddHttpClient("MapLocation.ServerAPI", client => client.BaseAddress = new Uri(builder.HostEnvironment.BaseAddress))
                 .AddHttpMessageHandler<BaseAddressAuthorizationMessageHandler>();
 
-            #region Dependency Injection 
-            builder.Services.AddScoped<ParametrosClient>();
-
-            builder.Services.AddScoped<TokenAuthStateProvider>();
-
-            builder.Services.AddScoped<IAuthorizeService, TokenAuthStateProvider>(
-                provider => provider.GetRequiredService<TokenAuthStateProvider>());
-
-            builder.Services.AddScoped<AuthenticationStateProvider, TokenAuthStateProvider>(
-                provider => provider.GetRequiredService<TokenAuthStateProvider>());
-            #endregion
-
             // Supply HttpClient instances that include access tokens when making requests to the server project
             builder.Services.AddScoped(sp => sp.GetRequiredService<IHttpClientFactory>().CreateClient("MapLocation.ServerAPI"));
 
-            builder.Services.AddMsalAuthentication(options =>
-            {
-                builder.Configuration.Bind("AzureAd", options.ProviderOptions.Authentication);
-                options.ProviderOptions.DefaultAccessTokenScopes.Add("api://api.id.uri/access_as_user");
-            });
-
-            builder.Services.AddMudServices();
+            builder.Services.AddApiAuthorization();
 
             await builder.Build().RunAsync();
         }
