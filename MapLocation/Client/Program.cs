@@ -1,12 +1,11 @@
+using MapLocation.Client.Auth;
+using MapLocation.Shared.Sistema;
+using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Components.WebAssembly.Authentication;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
 using System;
-using System.Collections.Generic;
 using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace MapLocation.Client
@@ -25,6 +24,15 @@ namespace MapLocation.Client
             builder.Services.AddScoped(sp => sp.GetRequiredService<IHttpClientFactory>().CreateClient("MapLocation.ServerAPI"));
 
             builder.Services.AddApiAuthorization();
+            builder.Services.AddScoped<ParametrosClient>();
+
+            builder.Services.AddScoped<TokenAuthStateProvider>();
+
+            builder.Services.AddScoped<IAuthorizeService, TokenAuthStateProvider>(
+                provider => provider.GetRequiredService<TokenAuthStateProvider>());
+
+            builder.Services.AddScoped<AuthenticationStateProvider, TokenAuthStateProvider>(
+                provider => provider.GetRequiredService<TokenAuthStateProvider>());
 
             await builder.Build().RunAsync();
         }
