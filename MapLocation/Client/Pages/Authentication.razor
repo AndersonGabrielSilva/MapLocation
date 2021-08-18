@@ -1,7 +1,70 @@
 ﻿@page "/authentication/{action}"
 @using Microsoft.AspNetCore.Components.WebAssembly.Authentication
-<RemoteAuthenticatorView Action="@Action" />
+
+@inject NavigationManager Navigation
+
+<MudThemeProvider Theme="currentTheme" />
+
+<RemoteAuthenticatorView Action="@Action">
+
+    <LoggingIn>
+        <MudContainer>
+            <MudProgressLinear Color="Color.Primary" Indeterminate="true" Class="my-7" />
+        </MudContainer>
+    </LoggingIn>
+
+    <CompletingLoggingIn>
+        <MudContainer>
+            <MudProgressLinear Color="Color.Primary" Indeterminate="true" Class="my-7" />
+        </MudContainer>
+    </CompletingLoggingIn>
+
+    <CompletingLogOut>
+        <MudContainer>
+            <MudProgressLinear Color="Color.Primary" Indeterminate="true" Class="my-7" />
+        </MudContainer>
+    </CompletingLogOut>
+
+    <LogInFailed>
+        <MudContainer>
+            <MudProgressLinear Color="Color.Primary" Indeterminate="true" Class="my-7" />
+        </MudContainer>
+    </LogInFailed>
+
+    <LogOut>
+        <MudContainer>
+            <MudProgressLinear Color="Color.Primary" Indeterminate="true" Class="my-7" />
+        </MudContainer>
+    </LogOut>
+
+    <CompletingLogOut>
+        <MudContainer>
+            <MudProgressLinear Color="Color.Primary" Indeterminate="true" Class="my-7" />
+        </MudContainer>
+    </CompletingLogOut>
+
+    <LogOutSucceeded>
+        <div>
+            @{ Navigation.NavigateTo(Navigation.BaseUri.ToString()); }
+        </div>
+    </LogOutSucceeded>
+
+</RemoteAuthenticatorView>
 
 @code{
     [Parameter] public string Action { get; set; }
+
+    protected override void OnInitialized() =>
+    currentTheme = PaleteColors;
+
+    MudTheme currentTheme = new MudTheme();
+
+    MudTheme PaleteColors = new MudTheme()
+    {
+        Palette = new Palette()
+        {
+            AppbarBackground = "#594AE2",
+            Tertiary = "#594AE2"
+        }
+    };
 }

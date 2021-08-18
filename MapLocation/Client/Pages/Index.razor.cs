@@ -1,4 +1,5 @@
 ﻿using MapLocation.Shared.SignalR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.SignalR.Client;
@@ -9,6 +10,7 @@ using System.Threading.Tasks;
 
 namespace MapLocation.Client.Pages
 {
+    [Authorize]
     public class IndexBase : ComponentBase
     {
 

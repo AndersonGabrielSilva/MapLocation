@@ -1,0 +1,88 @@
+﻿@page
+@model LoginModel
+
+@{
+    ViewData["Title"] = "MapLocation";
+    Layout = null;
+
+    //color = "#32333d";
+}
+
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <title>Login - @ViewData["Title"]</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="~/css/site.css">
+
+</head>
+<body style="background-color: #0e1d71; ">
+    <section class="ftco-section">
+        <div class="container">
+            <div class="row justify-content-center text-center" style="margin-bottom: 20px;">
+                <div class="col-md-7 col-lg-5">
+                    <img src="~/img/LogoMapLocationLogin.png" class="imgLogotipo" />
+                </div>
+            </div>
+            <div class="row justify-content-center">
+
+                <div class="col-md-7 col-lg-5">
+
+                    <div class="login-wrap shadow" style="padding: 20px; padding-bottom: 5px;">
+
+                        <form id="account" method="post" class="login-form">
+
+                            <div class="small">
+                                <div asp-validation-summary="ModelOnly" class="text-danger small"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <input asp-for="Input.Email" type="text" class="form-control rounded-left" placeholder="Login">
+                                <div class="small">
+                                    <span asp-validation-for="Input.Email" class="small text-danger"></span>
+                                </div>
+
+                            </div>
+                            <div class="form-group">
+                                <input asp-for="Input.Password" type="password" class="form-control rounded-left" placeholder="Senha">
+                                <div class="small">
+                                    <span asp-validation-for="Input.Password" class="small text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="form-control btn rounded submit px-3 text-light" style="background-color: #1d32a6 ">Login</button>
+                            </div>
+                            <div class="form-group d-md-flex">
+                                <div class="w-50">
+                                    <label class="checkbox-wrap checkbox-primary">
+                                        @Html.DisplayNameFor(m => m.Input.RememberMe)
+                                        <input type="checkbox" asp-for="Input.RememberMe">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                                <div class="w-50 text-md-right">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center text-center small text-light mt-3">
+                <div class="col-md-7 col-lg-5">
+                    © @DateTime.Now.Year - Todos os Direitos Reservados a MapLocation
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

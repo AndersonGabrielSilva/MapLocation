@@ -2,6 +2,7 @@
 using BrowserInterop.Geolocation;
 using MapLocation.Client.Shared.Component.GeographicLocation;
 using MapLocation.Client.Ultis;
+using Microsoft.AspNetCore.Authorization;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,7 @@ using System.Threading.Tasks;
 
 namespace MapLocation.Client.Pages.GeographicLocation
 {
+    [Authorize]
     public class RealTimeBase : Base, IAsyncDisposable
     {
         public Maps Map;
@@ -47,8 +49,11 @@ namespace MapLocation.Client.Pages.GeographicLocation
 
         protected async Task StopWatch()
         {
-            await geopositionWatcher.DisposeAsync();
-            geopositionWatcher = null;
+            if (!Equals(geopositionWatcher, null)) 
+            {
+                await geopositionWatcher.DisposeAsync();
+                geopositionWatcher = null;
+            }
         }
 
         public async ValueTask DisposeAsync()

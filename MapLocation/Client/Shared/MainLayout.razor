@@ -1,4 +1,10 @@
 ﻿@inherits LayoutComponentBase
+
+@using Microsoft.AspNetCore.Components.Authorization
+@using Microsoft.AspNetCore.Components.WebAssembly.Authentication
+
+@inject NavigationManager Navigation
+@inject SignOutSessionStateManager SignOutManager
 @inject IJSRuntime JS
 
 <MudThemeProvider Theme="currentTheme" />
@@ -7,21 +13,34 @@
 
 <MudLayout>
     <MudAppBar Elevation="1">
-        <MudIconButton Icon="@Icons.Material.Rounded.Menu" Color="Color.Inherit" Edge="Edge.Start" OnClick="@((e) => DrawerToggle())" />
+
+        <AuthorizeView>
+            <Authorized>
+                <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" OnClick="@((e) => DrawerToggle())" />
+            </Authorized>
+        </AuthorizeView>
         <MudText Typo="Typo.h5" Class="ml-3">MapLocation</MudText>
         <MudSpacer />
 
-        <MudIconButton Icon="@Icons.Material.Rounded.Refresh" Style="color: #ffffff" Size="Size.Medium" Class="ma-2" OnClick="@(UpdateSystem)" />
+        <AuthorizeView>
+            <Authorized>
+                <MudMenu Dense="true" Label="@context.User.Identity.Name" Variant="Variant.Filled" Color="Color.Tertiary" Direction="Direction.Bottom" OffsetX="true" FullWidth="true">
+                    <MudMenuItem Style="font-size: 11px;" OnClick="@(UpdateSystem)">Atualizar</MudMenuItem>
+                    <MudMenuItem Style="font-size: 11px;" OnClick="@(() => RedirecionaRota("authentication/logout"))">Sair</MudMenuItem>
+                </MudMenu>
+            </Authorized>
+            <NotAuthorized>
 
-        @*<MudMenu Dense="true" Icon="@Icons.Material.Filled.MoreVert" Variant="Variant.Filled" Color="Color.Tertiary" Direction="Direction.Bottom" OffsetX="true" FullWidth="true">
-              <MudMenuItem Style="font-size: 11px; width: 150px;" OnClick="@(UpdateSystem)">Atualizar</MudMenuItem>
-              <MudMenuItem Style="font-size: 11px;" OnClick="@(() => RedirecionaRota("authentication/logout"))">Sair</MudMenuItem>
-            </MudMenu>*@
-
+            </NotAuthorized>
+        </AuthorizeView>
     </MudAppBar>
-    <MudDrawer @bind-Open="_drawerOpen" ClipMode="DrawerClipMode.Always" Elevation="3" Style="background-color: #ECEFF1;">
-        <LeftSideMenu />
-    </MudDrawer>
+    <AuthorizeView>
+        <Authorized>
+            <MudDrawer @bind-Open="_drawerOpen" ClipMode="DrawerClipMode.Always" Elevation="3" Style="background-color: #ECEFF1;">
+                <LeftSideMenu />
+            </MudDrawer>
+        </Authorized>
+    </AuthorizeView>
     <MudMainContent>
         <MudContainer Style="padding-top: 15px; padding-bottom: 10px;">
             @Body
@@ -62,6 +81,12 @@
     protected override void OnInitialized() =>
         currentTheme = PaleteColors;
 
+    protected async Task RedirecionaRota(string Rota)
+    {
+        await SignOutManager.SetSignOutState();
+        Navigation.NavigateTo(Rota);
+    }
+
     public async void UpdateSystem()
     {
         bool? result = await mbox.Show();
@@ -76,7 +101,7 @@
         Palette = new Palette()
         {
             AppbarBackground = "#594AE2",
-            Tertiary = "#594AE2"
+            Tertiary = "#074f8A"
         }
     };
 }
