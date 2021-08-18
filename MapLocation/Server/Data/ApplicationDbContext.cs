@@ -1,5 +1,6 @@
 ﻿using IdentityServer4.EntityFramework.Options;
 using MapLocation.Server.Models;
+using MapLocationShared.Model;
 using Microsoft.AspNetCore.ApiAuthorization.IdentityServer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
@@ -17,5 +18,7 @@ namespace MapLocation.Server.Data
             IOptions<OperationalStoreOptions> operationalStoreOptions) : base(options, operationalStoreOptions)
         {
         }
+
+        public DbSet<LocationGPS> LocationGPS { get; set; }
     }
 }

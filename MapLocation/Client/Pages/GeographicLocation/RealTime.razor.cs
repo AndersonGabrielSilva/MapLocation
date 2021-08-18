@@ -1,7 +1,9 @@
 ﻿using BrowserInterop.Extensions;
 using BrowserInterop.Geolocation;
+using MapLocation.Client.Extensions;
 using MapLocation.Client.Shared.Component.GeographicLocation;
 using MapLocation.Client.Ultis;
+using MapLocationShared.Model;
 using Microsoft.AspNetCore.Authorization;
 using System;
 using System.Collections.Generic;
@@ -42,7 +44,8 @@ namespace MapLocation.Client.Pages.GeographicLocation
         {
             geopositionWatcher = await geolocationWrapper.WatchPosition(async (p) =>
             {
-                positioHistory.Add(p.Location);
+                //positioHistory.Add();
+                SendLocation(p.Location);
                 StateHasChanged();
             });
         }
@@ -59,6 +62,17 @@ namespace MapLocation.Client.Pages.GeographicLocation
         public async ValueTask DisposeAsync()
         {
             await StopWatch();
+        }
+
+        protected void SendLocation(GeolocationPosition Position) 
+        {
+            var Location = new LocationGPS().CreateLocationGPS(Position);
+
+        }
+
+        protected void ReceveidLocation()
+        {
+
         }
 
     }

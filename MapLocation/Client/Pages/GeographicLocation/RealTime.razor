@@ -1,6 +1,13 @@
 ﻿@page "/RealTime"
 
 @inherits RealTimeBase
+
+<AuthorizeView>
+    <Authorized>
+
+    </Authorized>
+</AuthorizeView>
+
 <div class="mb-3">
     <MudButton Size="Size.Small" Variant="Variant.Filled" Color="Color.Primary" OnClick="GetGeolocation">Localização</MudButton>
     <MudButton Size="Size.Small" Variant="Variant.Filled" Color="Color.Primary" OnClick="WatchPosition">Varias Localizações</MudButton>
