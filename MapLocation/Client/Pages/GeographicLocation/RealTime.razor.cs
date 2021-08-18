@@ -72,7 +72,7 @@ namespace MapLocation.Client.Pages.GeographicLocation
 
         protected void ReceveidLocation()
         {
-
+            var teste = 0;
         }
 
     }
