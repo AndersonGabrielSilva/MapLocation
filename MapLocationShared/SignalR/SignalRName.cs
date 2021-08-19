@@ -13,6 +13,7 @@ namespace MapLocation.Shared.SignalR
 
         #region Metodos Server
         public const string JoinGroup = nameof(JoinGroup);
+        public const string SaveLocationNotify = nameof(SaveLocationNotify);
         #endregion
 
         #region Metodos Client
