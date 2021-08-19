@@ -17,6 +17,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MapLocation.Client", "MapLo
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MapLocation", "MapLocation", "{D0CF6208-4CC8-46AB-A6BE-7C02269FDA9D}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Repositories", "Repositories", "{F0D5534F-202C-4822-B38C-9BF13F9D2974}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DapperRepository", "DapperRepository\DapperRepository.csproj", "{878B96B5-9775-472B-B781-D8FCD8812B02}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,10 @@ Global
 		{235BB808-784B-4036-B018-6B3B6371CC2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{235BB808-784B-4036-B018-6B3B6371CC2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{235BB808-784B-4036-B018-6B3B6371CC2F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{878B96B5-9775-472B-B781-D8FCD8812B02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{878B96B5-9775-472B-B781-D8FCD8812B02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{878B96B5-9775-472B-B781-D8FCD8812B02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{878B96B5-9775-472B-B781-D8FCD8812B02}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -48,6 +56,7 @@ Global
 		{C2751740-2D01-459E-BB18-671C19E5B057} = {BB8814DE-CFCE-411E-A13C-876542BB5801}
 		{919E2834-BBA9-49E0-90F0-19521FE24C2C} = {D0CF6208-4CC8-46AB-A6BE-7C02269FDA9D}
 		{235BB808-784B-4036-B018-6B3B6371CC2F} = {D0CF6208-4CC8-46AB-A6BE-7C02269FDA9D}
+		{878B96B5-9775-472B-B781-D8FCD8812B02} = {F0D5534F-202C-4822-B38C-9BF13F9D2974}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {595A97A0-D4F9-474A-B248-8E9FF10B0502}
