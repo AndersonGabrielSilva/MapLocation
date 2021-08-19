@@ -24,27 +24,28 @@ namespace DapperRepository.Repositories
                     LEFT JOIN [UserRole] ON [UserRole].[UserId] = [User].[Id]
                     LEFT JOIN [Role] ON [UserRole].[RoleId] = [Role].[Id]";
 
-            var location = new List<LocationGPSDapper>();
-            var items = _connection.Query<LocationGPSDapper, Role, LocationGPSDapper>(
-                query,
-                (user, role) =>
-                {
-                    var usr = location.FirstOrDefault(x => x.Id == user.Id);
-                    if (usr == null)
-                    {
-                        usr = user;
+            //var location = new List<LocationGPSDapper>();
+            //var items = _connection.Query<LocationGPSDapper, Role, LocationGPSDapper>(
+            //    query,
+            //    (user, role) =>
+            //    {
+            //        var usr = location.FirstOrDefault(x => x.Id == user.Id);
+            //        if (usr == null)
+            //        {
+            //            usr = user;
 
-                        usr.AddRoule(role);
+            //            usr.AddRoule(role);
 
-                        location.Add(usr);
-                    }
-                    else
-                        usr.AddRoule(role);
+            //            location.Add(usr);
+            //        }
+            //        else
+            //            usr.AddRoule(role);
 
-                    return user;
-                }, splitOn: "Id");
+            //        return user;
+            //    }, splitOn: "Id");
 
-            return location;
+            return null;
+            //return location;
         }
     }
 }
