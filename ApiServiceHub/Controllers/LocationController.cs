@@ -25,5 +25,6 @@ namespace ApiServiceHub.Controllers
             await hubContext.Clients.All.SendAsync(group + SignalRName.RouteLocationHub, mensagem);
             return Ok();
         }
+
     }
 }
