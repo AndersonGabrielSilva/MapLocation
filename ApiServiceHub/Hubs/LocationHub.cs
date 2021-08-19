@@ -1,5 +1,8 @@
-﻿using MapLocation.Shared.SignalR;
+﻿using DapperRepository.Models;
+using DapperRepository.Repositories;
+using MapLocation.Shared.SignalR;
 using MapLocationShared.Model;
+using MapLocationShared.Utils;
 using Microsoft.AspNetCore.SignalR;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -31,6 +34,12 @@ namespace ApiServiceHub.Hubs
 
         public async Task SaveLocationNotify(string groupName, LocationGPS location)
         {
+            DataSettings.GetConnection();
+
+            var repository = new LocationGpsRepository(DataSettings.GetConnection());
+
+            repository.Create(new LocationGPSDapper(location));
+
             await Clients.All.SendAsync(groupName + SignalRName.LocationHub, new List<LocationGPS> { location });
         }
     }

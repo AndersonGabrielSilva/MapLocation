@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 namespace MapLocationShared.Model
 {
     public class LocationGPS
-    {
+    {    
         [Key]
         public virtual int Id { get; set; }
         public virtual double Latitude { get; set; }

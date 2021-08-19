@@ -1,4 +1,5 @@
 using ApiServiceHub.Extensions;
+using MapLocationShared.Utils;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -56,6 +57,7 @@ namespace ApiServiceHub
 
             //Busca do Arquivo de configuraçoes todas as URLS que possuem autorização para acessar o Hub
             var urls = Configuration.GetSection("Urls").Value.ToString().Split(";");
+            DataSettings.ConnectionString = Configuration.GetConnectionString("DefaultConnection");
 
             //Autoriza outros dominios há acessar o Hub
             app.UseCors(builder =>

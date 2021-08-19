@@ -12,14 +12,14 @@ namespace DapperRepository.Repositories
         public Repository(SqlConnection connection)
             => _connection = connection;
 
-        public void Create(TModel model) => _connection.Insert(model);
+        public virtual void Create(TModel model) { if (_connection != null) _connection.Insert(model); }
 
-        public List<TModel> Read() => _connection.GetAll<TModel>().ToList();
+        public virtual List<TModel> Read() => _connection != null ? _connection.GetAll<TModel>().ToList() : new List<TModel>();
 
-        public TModel Read(int id) => _connection.Get<TModel>(id);
+        public virtual TModel Read(int id) => _connection != null ? _connection.Get<TModel>(id) : null;
 
-        public void Update(TModel model) => _connection.Update(model);
+        public virtual void Update(TModel model) { if(_connection != null) _connection.Update(model);}
 
-        public void Delete(TModel model) => _connection.Delete(model);
+        public virtual void Delete(TModel model) { if (_connection != null) _connection.Delete(model); }
     }
 }

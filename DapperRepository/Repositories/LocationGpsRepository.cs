@@ -47,5 +47,51 @@ namespace DapperRepository.Repositories
             return null;
             //return location;
         }
+
+        public override void Create(LocationGPSDapper model)
+        {
+            if (_connection == null)
+                return;
+
+            #region Insert SQL
+            var insertSql = @"INSERT INTO [dbo].[LocationGPS]
+                                   ([Latitude]
+                                   ,[Longitude]
+                                   ,[Altitude]
+                                   ,[Accuracy]
+                                   ,[AltitudeAccuracy]
+                                   ,[Heading]
+                                   ,[Speed]
+                                   ,[PointDate]
+                                   ,[IdUser]
+                                   ,[SessionId])
+                             VALUES
+                                   (@Latitude
+                                   ,@Longitude
+                                   ,@Altitude
+                                   ,@Accuracy
+                                   ,@AltitudeAccuracy
+                                   ,@Heading
+                                   ,@Speed
+                                   ,@PointDate
+                                   ,@IdUser
+                                   ,@SessionId)";
+            #endregion
+
+            var rows = _connection.Execute(insertSql, new
+            {
+                Latitude = model.Latitude,
+                Longitude = model.Longitude,
+                Altitude = model.Altitude,
+                Accuracy = model.Accuracy,
+                AltitudeAccuracy = model.AltitudeAccuracy,
+                Heading = model.Heading,
+                Speed = model.Speed,
+                PointDate = model.PointDate,
+                IdUser = model.IdUser,
+                SessionId = model.SessionId
+            });
+
+        }
     }
 }
