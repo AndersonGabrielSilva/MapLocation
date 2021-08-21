@@ -18,63 +18,12 @@
                 <MudText Typo="Typo.h6" Class="px-4">Menu</MudText>
                 <MudText Typo="Typo.body2" Class="px-4 mud-text-secondary">Menu de GeoLocalização</MudText>
                 <MudDivider Class="my-2" />
-                <MudNavLink OnClick="GetGeolocation">Localização</MudNavLink>
-                <MudNavLink OnClick="WatchPosition">Navegação</MudNavLink>
-                <MudNavLink OnClick="StopWatch">Parar Navegação</MudNavLink>
-                <MudNavLink OnClick="GetLayout">Layout</MudNavLink>
+                <MudNavLink Icon="@Icons.Material.Rounded.LocationOn" OnClick="GetGeolocation">Localização</MudNavLink>
+                <MudNavLink Icon="@Icons.Material.Rounded.Navigation" OnClick="WatchPosition">Navegação</MudNavLink>
+                <MudNavLink Icon="@Icons.Material.Rounded.Stop" OnClick="StopWatch">Parar Navegação</MudNavLink>
+                <MudNavLink Icon="@Icons.Material.Rounded.LayersClear" OnClick="RemoverMarcacoes">Limpar Mapa</MudNavLink>
+                <MudNavLink Icon="@Icons.Material.Rounded.Map" OnClick="GetLayout">Layout</MudNavLink>
             </MudNavMenu>
         </MudPaper> 
     </MudItem>
 </MudGrid>
-
-
-@*@if (!Equals(currentPosition, null))
-{
-    <MudGrid>
-        <MudItem xs="12" sm="12" md="12" lg="12" xl="12">
-            <MudText Typo="Typo.caption">Latitude: @currentPosition.Coords.Latitude</MudText>
-        </MudItem>
-        <MudItem xs="12" sm="12" md="12" lg="12" xl="12">
-            <MudText Typo="Typo.caption">Longitude: @currentPosition.Coords.Longitude</MudText>
-        </MudItem>
-        <MudItem xs="12" sm="12" md="12" lg="12" xl="12">
-            <MudText Typo="Typo.caption">Altitude: @currentPosition.Coords.Altitude</MudText>
-        </MudItem>
-        <MudItem xs="12" sm="12" md="12" lg="12" xl="12">
-            <MudText Typo="Typo.caption">Acuracia: @currentPosition.Coords.Accuracy</MudText>
-        </MudItem>
-        <MudItem xs="12" sm="12" md="12" lg="12" xl="12">
-            <MudText Typo="Typo.caption">Altitude Acuracia: @currentPosition.Coords.AltitudeAccuracy</MudText>
-        </MudItem>
-        <MudItem xs="12" sm="12" md="12" lg="12" xl="12">
-            <MudText Typo="Typo.caption">Heading: @currentPosition.Coords.Heading</MudText>
-        </MudItem>
-        <MudItem xs="12" sm="12" md="12" lg="12" xl="12">
-            <MudText Typo="Typo.caption">Speed: @currentPosition.Coords.Speed</MudText>
-        </MudItem>
-    </MudGrid>
-}*@
-
-@if (!Equals(positioHistory, null) && positioHistory.Count > 0)
-{
-    <MudTable Items="@positioHistory" Hover="true" Breakpoint="Breakpoint.Sm" Loading="false">
-        <HeaderContent>
-            <MudTh>Latitude</MudTh>
-            <MudTh>Longitude</MudTh>
-            <MudTh>Altitude</MudTh>
-            <MudTh>Accuracy</MudTh>
-            <MudTh>AltitudeAccuracy</MudTh>
-            <MudTh>Heading</MudTh>
-            <MudTh>Speed</MudTh>
-        </HeaderContent>
-        <RowTemplate>
-            <MudTd DataLabel="Latitude">@context.Coords.Latitude</MudTd>
-            <MudTd DataLabel="Longitude">@context.Coords.Longitude</MudTd>
-            <MudTd DataLabel="Altitude">@context.Coords.Altitude</MudTd>
-            <MudTd DataLabel="Accuracy">@context.Coords.Accuracy</MudTd>
-            <MudTd DataLabel="AltitudeAccuracy">@context.Coords.AltitudeAccuracy</MudTd>
-            <MudTd DataLabel="Heading">@context.Coords.Heading</MudTd>
-            <MudTd DataLabel="Speed">@context.Coords.Speed</MudTd>
-        </RowTemplate>
-    </MudTable>
-}
