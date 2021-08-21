@@ -3,50 +3,100 @@
 var ZoomMin;
 var ZoomMax;
 var AttributionConfig;
+var TemplateConfig;
 
 var MapaInicializado = false;
 
-function InitializeMap(Attribution, MinZoom, MaxZoom) {
+function InitializeMap(Attribution, MinZoom, MaxZoom, Template) {
 
     map = L.map(document.getElementById('mapDIV'), {
         center: [-21.1767, -47.8208],
         zoom: 12
     });
 
-    ConfigureMap(Attribution, MinZoom, MaxZoom);
+    ConfigureMap(Attribution, MinZoom, MaxZoom, Template);
 }
 
-function ConfigureMap(Attribution, MinZoom, MaxZoom) {
+function ConfigureMap(Attribution, MinZoom, MaxZoom, Template) {
 
     ZoomMin = MinZoom;
     ZoomMax = MaxZoom;
     AttributionConfig = Attribution;
+    TemplateConfig = Template;
 
     ConfigureTheMainMap();
 }
 
-function ConfigureTheMainMap() {
-    L.tileLayer('https://api.maptiler.com/maps/hybrid/256/{z}/{x}/{y}@2x.jpg?key=OhKLq5wlAdK90y0vDvPY',
-    /*L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png',*/
+function ConfigureTheMainMap(Template) {
+
+    //https://tile.thunderforest.com/cycle/{z}/{x}/{y}.png?apikey=3b495e9cd83e42f18f72300d39d88d8c
+    //https://api.maptiler.com/maps/hybrid/256/{z}/{x}/{y}@2x.jpg?key=OhKLq5wlAdK90y0vDvPY
+    //http://{s}.tile.osm.org/{z}/{x}/{y}.png
+
+    L.tileLayer(TemplateConfig,
         {
             attribution: AttributionConfig,
             maxZoom: ZoomMax,
             minZoom: ZoomMin
         }).addTo(map);
+
 }
 
+function RemoverMarcacaoMapa() {
+    map.eachLayer((layer) => {
+        layer.remove();
+    });
 
+    MapaInicializado = false;
 
+    ConfigureTheMainMap();
 
+    map.setView([-21.1767, -47.8208], 12);
+}
 
+function RemoverMarcacaoMapaLoad() {
+    map.eachLayer((layer) => {
+        layer.remove();
+    });
+}
 
+function Marker(latitude, longitude, altitude, accuracy) {
 
+    var Popup = "<ul>" +
+        "   <li>" +
+        "       Latitude: " + latitude +
+        "   </li>" +
+        "   <li>" +
+        "       Longitude: " + longitude +
+        "   </li>" +
+        "   <li>" +
+        "       Altitude: " + altitude +
+        "   </li>" +
+        "   <li>" +
+        "       Accuracy: " + accuracy +
+        "   </li>" +
+        "</ul>";
 
+    L.marker([latitude, longitude])
+        .bindPopup(Popup)
+        .addTo(map);
 
+    map.setView([latitude, longitude], 16);
 
+}
 
+function Reset(Attribution, MinZoom, MaxZoom, Template) {
+    MapaInicializado = false;
 
+    map.remove();
 
+    map = L.map(document.getElementById('mapDIV'), {
+        center: [-21.1767, -47.8208],
+        zoom: 12
+    });
+
+    ConfigureMap(Attribution, MinZoom, MaxZoom, Template);
+}
 
 function InicializaMapa(Latitude, Longitude, Zoom) {
 
@@ -57,6 +107,7 @@ function InicializaMapa(Latitude, Longitude, Zoom) {
 
     ConfiguracaoMapaPrincipal();
 }
+
 function CriaMarcacaoMapa(dados, result) {
 
     var dataRow = [];
@@ -161,18 +212,3 @@ function CriaMarcacaoMapa2() {
         .addTo(map);
 }
 
-function RemoverMarcacaoMapa() {
-    map.eachLayer((layer) => {
-        layer.remove();
-    });
-
-    MapaInicializado = false;
-
-    ConfigureTheMainMap();
-}
-
-function RemoverMarcacaoMapaLoad() {
-    map.eachLayer((layer) => {
-        layer.remove();
-    });
-}

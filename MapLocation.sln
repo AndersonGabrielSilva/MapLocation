@@ -19,7 +19,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MapLocation", "MapLocation"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Repositories", "Repositories", "{F0D5534F-202C-4822-B38C-9BF13F9D2974}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DapperRepository", "DapperRepository\DapperRepository.csproj", "{878B96B5-9775-472B-B781-D8FCD8812B02}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DapperRepository", "DapperRepository\DapperRepository.csproj", "{878B96B5-9775-472B-B781-D8FCD8812B02}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

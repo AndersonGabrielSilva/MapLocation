@@ -17,7 +17,7 @@ namespace MapLocation.Client.Shared.Component.GeographicLocation
         protected override async Task OnAfterRenderAsync(bool firstRender)
         {
             if (firstRender)
-                await JS.InvokeVoidAsync("InitializeMap", Attribution, MinZoom, MaxZoom);
+                await JS.InvokeVoidAsync("InitializeMap", Attribution, MinZoom, MaxZoom, "http://{s}.tile.osm.org/{z}/{x}/{y}.png");
         }
         #endregion
     }
