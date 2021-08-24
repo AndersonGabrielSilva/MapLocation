@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MapLocationShared.Model
+namespace BlazorGPS.Shared
 {
     public class LayoutList
     {
