@@ -9,7 +9,7 @@
 <MudLayout>
     <MudAppBar Elevation="1">
         <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" OnClick="@((e) => DrawerToggle())" />
-        <MudText Typo="Typo.h5" Class="ml-3">BlazorGPS</MudText>
+        <MudText Typo="Typo.h5" Class="ml-3">MapLocation</MudText>
         <MudSpacer />
         <MudIconButton Icon="@Icons.Material.Rounded.Refresh" Color="Color.Tertiary" Edge="Edge.End" OnClick="@(UpdateSystem)" />
     </MudAppBar>
@@ -39,7 +39,7 @@
         </MudGrid>
     </MessageContent>
     <YesButton>
-        <MudButton Variant="Variant.Filled" Color="Color.Tertiary">Atualizar</MudButton>
+        <MudButton>Atualizar</MudButton>
     </YesButton>
 </MudMessageBox>
 
@@ -71,8 +71,9 @@
     {
         Palette = new Palette()
         {
-            AppbarBackground = "#004647",
-            Tertiary = "#377D7D"
+            AppbarBackground = "#4F4F4F",
+            Tertiary = "#FFFFFF"
+
         }
     };
 }

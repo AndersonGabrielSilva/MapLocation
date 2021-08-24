@@ -15,7 +15,7 @@ namespace BlazorGPS.Client.Utils
         {
             //this.Template = "https://api.maptiler.com/maps/hybrid/256/{z}/{x}/{y}@2x.jpg?key=OhKLq5wlAdK90y0vDvPY";
             this.Template = "http://{s}.tile.osm.org/{z}/{x}/{y}.png";
-            this.Attribution = "Gerado por <a href=\"/\">BlazorGPS</a>";
+            this.Attribution = "Gerado por <a href=\"/\">MapLocation</a>";
             this.MinZoom = 6;
             this.MaxZoom = 50;
         }
