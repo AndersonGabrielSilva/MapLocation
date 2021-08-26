@@ -1,0 +1,18 @@
+﻿@page "/teste"
+
+@inherits TesteBase
+
+
+<h1>ID:   @ID</h1>
+
+@if (Message != null && Message.Count > 0)
+{
+    <MudTable Items="@Message" Hover="true" Breakpoint="Breakpoint.Sm" LoadingProgressColor="Color.Info">
+        <HeaderContent>
+            <MudTh>Messagem</MudTh>
+        </HeaderContent>
+        <RowTemplate>
+            <MudTd DataLabel="Menssagem:">@context</MudTd>            
+        </RowTemplate>
+    </MudTable>
+}
