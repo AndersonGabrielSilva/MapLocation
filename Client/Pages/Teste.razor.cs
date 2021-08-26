@@ -40,6 +40,7 @@ namespace BlazorGPS.Client.Pages
                                 .Build();
 
 
+
                         HubConnection.On<string>(SignalRName.TestMessageHub, (message) => RecevedMessage(message));
 
                         await HubConnection.StartAsync();
