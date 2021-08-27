@@ -11,7 +11,7 @@
         <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" OnClick="@((e) => DrawerToggle())" />
         <MudText Typo="Typo.h5" Class="ml-3">MapLocation</MudText>
         <MudSpacer />
-        <MudIconButton Icon="@Icons.Material.Rounded.Refresh" Color="Color.Tertiary" Edge="Edge.End" OnClick="@(UpdateSystem)" />
+        <MudIconButton Icon="@Icons.Material.Rounded.Refresh" Color="Color.Inherit" Edge="Edge.End" OnClick="@(UpdateSystem)" />
     </MudAppBar>
     <MudDrawer @bind-Open="_drawerOpen" ClipMode="DrawerClipMode.Always" Elevation="3" Style="background-color: #ECEFF1;">
         <LeftSideMenu />
@@ -63,8 +63,6 @@
         if (!Equals(result, null))
             if (result == true)
                 await JS.InvokeVoidAsync("UpdateSystem");
-
-
     }
 
     MudTheme PaleteColors = new MudTheme()
@@ -72,8 +70,7 @@
         Palette = new Palette()
         {
             AppbarBackground = "#4F4F4F",
-            Tertiary = "#FFFFFF"
-
+            Tertiary = "#4F4F4F",
         }
     };
 }

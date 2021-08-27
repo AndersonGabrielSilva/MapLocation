@@ -23,6 +23,17 @@ namespace ApiServiceHub.Controllers
         public async Task<ActionResult> Post(string group, string mensagem)
         {
             await hubContext.Clients.All.SendAsync(group + SignalRName.RouteLocationHub, mensagem);
+
+           
+
+            return Ok();
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Mensagem([FromServices] IHubContext<TestMessageHub> contextTesteMessage, string messagem)
+        {
+            await hubContext.Clients.All.SendAsync("DanielPolo", messagem);
+
             return Ok();
         }
 

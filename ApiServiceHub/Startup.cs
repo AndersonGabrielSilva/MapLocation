@@ -63,7 +63,8 @@ namespace ApiServiceHub
             app.UseCors(builder =>
             {
                 builder
-                  .WithOrigins("https://maplocationblazor.azurewebsites.net")
+                  //.WithOrigins("https://maplocationblazor.azurewebsites.net")
+                  .WithOrigins(urls)
                   .AllowAnyHeader()
                   .WithMethods("GET", "PATCH", "DELETE", "PUT", "POST", "OPTIONS")
                   .AllowCredentials();

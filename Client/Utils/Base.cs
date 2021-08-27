@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.SignalR.Client;
 using Microsoft.JSInterop;
 
 namespace BlazorGPS.Client.Utils
@@ -16,7 +17,7 @@ namespace BlazorGPS.Client.Utils
             //this.Template = "https://api.maptiler.com/maps/hybrid/256/{z}/{x}/{y}@2x.jpg?key=OhKLq5wlAdK90y0vDvPY";
             this.Template = "http://{s}.tile.osm.org/{z}/{x}/{y}.png";
             this.Attribution = "Gerado por <a href=\"/\">MapLocation</a>";
-            this.MinZoom = 6;
+            this.MinZoom = 1;
             this.MaxZoom = 50;
         }
         #endregion
@@ -29,6 +30,8 @@ namespace BlazorGPS.Client.Utils
         public int MinZoom { get; set; }
 
         public int MaxZoom { get; set; }
+
+        protected HubConnection hubConnection { get; set; }
         #endregion
     }
 }
