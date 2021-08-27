@@ -5,12 +5,12 @@ using Microsoft.AspNetCore.SignalR.Client;
 using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
-namespace BlazorGPS.Client.Pages
+namespace BlazorGPS.Client.Pages.Teste
 {
-    public class TesteBase : Base
-
+    public class TesteMessageBase : Base
     {
         public string ID { get; set; }
 
@@ -31,12 +31,12 @@ namespace BlazorGPS.Client.Pages
                         //var authenticationState = await authenticationStateProvider.GetAuthenticationStateAsync();
                         //var group = authenticationState.User.Claims.SingleOrDefault(x => x.Type == nameof(SignalRName.Group)).Value.ToString();
 
-                        var url = Configuration.GetSection("ApiServiceHub").GetSection("ApiUrl").Value;
+                        //var url = Configuration.GetSection("ApiServiceHub").GetSection("ApiUrl").Value;
 
                         ID = Guid.NewGuid().ToString();
 
                         var HubConnection = new HubConnectionBuilder()
-                                .WithUrl(url + SignalRName.RouteTesteHub)
+                                .WithUrl("https://apiservicehub.azurewebsites.net" + SignalRName.RouteTesteHub)
                                 .Build();
 
 
