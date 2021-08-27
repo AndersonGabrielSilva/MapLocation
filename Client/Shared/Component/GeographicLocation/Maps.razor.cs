@@ -2,18 +2,13 @@
 using Microsoft.JSInterop;
 using System.Threading.Tasks;
 
-namespace BlazorGPS.Client.Shared.Component
+namespace BlazorGPS.Client.Shared.Component.GeographicLocation
 {
     public class MapsBase : Base
     {
         #region Properties
 
         #endregion
-
-        public MapsBase()
-        {
-            
-        }
 
         #region Events
         protected override async Task OnAfterRenderAsync(bool firstRender)

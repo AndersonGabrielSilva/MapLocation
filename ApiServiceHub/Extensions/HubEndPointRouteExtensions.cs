@@ -10,6 +10,7 @@ namespace ApiServiceHub.Extensions
         public static void MapHubRoute(this IEndpointRouteBuilder endpoints)
         {
             endpoints.MapHub<LocationHub>(SignalRName.RouteLocationHub);
+            endpoints.MapHub<TestMessageHub>(SignalRName.RouteTesteHub);
         }
     }
 }

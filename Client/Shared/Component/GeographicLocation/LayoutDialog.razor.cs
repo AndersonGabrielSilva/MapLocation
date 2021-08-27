@@ -4,11 +4,8 @@ using Microsoft.AspNetCore.Components;
 using MudBlazor;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
-
-namespace BlazorGPS.Client.Shared.Component
+namespace BlazorGPS.Client.Shared.Component.GeographicLocation
 {
     public class LayoutDialogBase : ComponentBase
     {
