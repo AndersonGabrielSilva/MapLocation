@@ -1,4 +1,5 @@
 ﻿using MapLocationShared.Entities;
+using MapLocationShared.Utils;
 using Microsoft.EntityFrameworkCore;
 
 namespace EFRepository.cs.Data
@@ -8,7 +9,7 @@ namespace EFRepository.cs.Data
 
         #region Data Settings
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) =>
-        optionsBuilder.UseSqlServer("ConectarDataBase.Base");
+        optionsBuilder.UseSqlServer(DataSettings.ConnectionString);
         #endregion
 
         #region Entities
