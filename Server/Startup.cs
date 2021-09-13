@@ -1,3 +1,5 @@
+using MapLocationShared.Utils;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -5,8 +7,11 @@ using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.IdentityModel.Tokens;
 using MudBlazor.Services;
+using System;
 using System.Linq;
+using System.Text;
 
 namespace BlazorGPS.Server
 {
@@ -23,6 +28,24 @@ namespace BlazorGPS.Server
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            DataSettings.ConnectionString = Configuration.GetConnectionString("DefaultConnection");
+
+            var key = Configuration["jwt:key"];
+
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                .AddJwtBearer(options =>
+                {
+                    options.RequireHttpsMetadata = false;
+                    options.SaveToken = true;
+                    options.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        ValidateIssuer = false,
+                        ValidateAudience = false,
+                        ValidateIssuerSigningKey = true,
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(key)),
+                        ClockSkew = TimeSpan.Zero
+                    };
+                });
 
             services.AddControllersWithViews();
             services.AddRazorPages();
