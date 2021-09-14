@@ -1,0 +1,44 @@
+﻿@page "/"
+@inherits LoginBase
+@layout LoginLayout
+
+<div class="px-8 pb-8">
+    <MudTextField @bind-Value="@User.Username"
+                  Placeholder="Login"
+                  Variant="Variant.Outlined"
+                  Class="my-6"
+                  Adornment="Adornment.Start"
+                  AdornmentIcon="@Icons.Material.Rounded.AccountCircle"></MudTextField>
+
+    <MudTextField @bind-Value="@User.Password"
+                  Placeholder="Senha"
+                  Adornment="Adornment.Start"
+                  AdornmentIcon="@Icons.Material.Rounded.VpnKey"
+                  Variant="Variant.Outlined"
+                  InputType="@PasswordInput" />
+
+    <div Class="d-flex justify-space-between align-center">
+        <MudCheckBox T="bool" @bind-Checked="User.RememberMe" Label="Lembre-me?" Color="Color.Primary" Class="ml-n1 my-3"></MudCheckBox>
+    </div>
+
+    <MudButton Variant="Variant.Filled"
+               Color="Color.Primary"
+               OnClick="Login"
+               Size="Size.Large"
+               FullWidth="true"
+               Disabled="@isLogin">Logar-se</MudButton>
+
+    <MudButton Variant="Variant.Filled"
+               Color="Color.Default"
+               Link="/personal/dashboard"
+               Size="Size.Large"
+               FullWidth="true"
+               Class="mt-3"
+               Disabled="@isLogin">Criar Nova Conta</MudButton>
+
+</div>
+
+@if (isLogin)
+{
+    <MudProgressLinear Color="Color.Primary" Indeterminate="true" />
+}

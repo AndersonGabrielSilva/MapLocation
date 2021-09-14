@@ -1,0 +1,34 @@
+﻿@inherits LayoutComponentBase
+
+<MudThemeProvider Theme="currentTheme" />
+<MudDialogProvider />
+<MudSnackbarProvider />
+
+<MudContainer MaxWidth="MaxWidth.Small" Class="d-flex justify-center" Style="height: 100vh;">
+    <div class="align-self-center">
+        <MudPaper Elevation="24" Class="p-0 pt-8" Width="100%" MaxWidth="500px">
+            <div style="text-align: center;">
+                <img src="/img/LogoMapLocation.png">
+            </div>
+            @Body
+        </MudPaper>
+    </div>
+</MudContainer>
+
+@code {
+    MudTheme currentTheme = new MudTheme();
+
+    MudMessageBox mbox { get; set; }
+
+    protected override void OnInitialized() =>
+    currentTheme = PaleteColors;
+
+    MudTheme PaleteColors = new MudTheme()
+    {
+        Palette = new Palette()
+        {
+            AppbarBackground = "#4F4F4F",
+            Tertiary = "#4F4F4F",
+        }
+    };
+}

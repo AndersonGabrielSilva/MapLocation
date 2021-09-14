@@ -21,7 +21,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorGPS.Server", "Server\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorGPS.Client", "Client\BlazorGPS.Client.csproj", "{290C2F87-F0F2-4479-BAEB-B03FB2DDFA63}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFRepository.cs", "EFRepository.cs\EFRepository.cs.csproj", "{DFE84AAE-9B3F-4A00-A9DB-33B929A970EB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EFRepository.cs", "EFRepository.cs\EFRepository.cs.csproj", "{DFE84AAE-9B3F-4A00-A9DB-33B929A970EB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

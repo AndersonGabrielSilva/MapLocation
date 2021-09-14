@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.SignalR.Client;
 using Microsoft.JSInterop;
+using MudBlazor;
+using System.Net.Http;
 
 namespace BlazorGPS.Client.Utils
 {
@@ -9,6 +11,15 @@ namespace BlazorGPS.Client.Utils
         #region Inject
         [Inject]
         public IJSRuntime JS { get; set; }
+
+        [Inject]
+        public NavigationManager Navigation { get; set; }
+
+        [Inject]
+        public HttpClient Http { get; set; }
+
+        [Inject]
+        public ISnackbar Snackbar { get; set; }
         #endregion
 
         #region Constructor
@@ -33,5 +44,10 @@ namespace BlazorGPS.Client.Utils
 
         protected HubConnection hubConnection { get; set; }
         #endregion
+
+        #region URL's
+
+        #endregion
+
     }
 }
